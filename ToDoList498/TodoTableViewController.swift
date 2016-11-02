@@ -30,6 +30,7 @@ class TodoTableViewController: UITableViewController {
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 69
+        
         self.tableView.tableFooterView = UIView()
     }
     
@@ -80,6 +81,8 @@ class TodoTableViewController: UITableViewController {
             self.tasks.remove(at: indexPath.row)
             
             var arr = TodoTableViewController.getTasks()
+            print(indexPath.row)
+            print(arr)
             arr.remove(at: indexPath.row)
             UserDefaults.standard.set(arr, forKey: "tasks")
             
