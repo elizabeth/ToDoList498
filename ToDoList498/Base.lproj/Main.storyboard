@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,36 +19,26 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zom-Qs-NVw" id="ys9-7h-4Qb">
-                                    <frame key="frameInset" width="375" height="68"/>
+                                    <frame key="frameInset" width="375" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5i-GX-LfZ" userLabel="Description Label">
-                                            <frame key="frameInset" minX="16" minY="33" width="351" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DD-jr-jnn">
+                                            <frame key="frameInset" minX="17" minY="8" width="359" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izR-VH-PyZ" userLabel="Title Label">
-                                            <frame key="frameInset" minX="16" minY="4" width="359" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSD-kY-9iv">
+                                            <frame key="frameInset" minX="17" minY="36" width="358" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="x5i-GX-LfZ" firstAttribute="leading" secondItem="ys9-7h-4Qb" secondAttribute="leadingMargin" constant="8" id="7bB-ai-7ht"/>
-                                        <constraint firstItem="x5i-GX-LfZ" firstAttribute="trailing" secondItem="ys9-7h-4Qb" secondAttribute="trailingMargin" constant="8" id="BB7-NU-Ucz"/>
-                                        <constraint firstItem="x5i-GX-LfZ" firstAttribute="top" secondItem="izR-VH-PyZ" secondAttribute="bottom" constant="10" id="ZhW-WD-guj"/>
-                                        <constraint firstItem="izR-VH-PyZ" firstAttribute="leading" secondItem="ys9-7h-4Qb" secondAttribute="leadingMargin" constant="8" id="nEk-CR-H2K"/>
-                                        <constraint firstItem="x5i-GX-LfZ" firstAttribute="bottom" secondItem="ys9-7h-4Qb" secondAttribute="bottomMargin" id="qZT-dd-2YS"/>
-                                        <constraint firstItem="izR-VH-PyZ" firstAttribute="top" secondItem="ys9-7h-4Qb" secondAttribute="topMargin" id="rKS-lb-dbL"/>
-                                        <constraint firstItem="izR-VH-PyZ" firstAttribute="trailing" secondItem="ys9-7h-4Qb" secondAttribute="trailingMargin" constant="-8" id="xXj-pI-uIU"/>
+                                        <constraint firstItem="QSD-kY-9iv" firstAttribute="top" secondItem="1DD-jr-jnn" secondAttribute="bottom" constant="2" id="pjs-Jv-fQV"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="descriptionLabel" destination="x5i-GX-LfZ" id="sFQ-4A-7bD"/>
-                                    <outlet property="titleLabel" destination="izR-VH-PyZ" id="1hx-Cf-zsh"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

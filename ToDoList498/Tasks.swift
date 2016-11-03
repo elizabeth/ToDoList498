@@ -12,7 +12,7 @@ class Tasks: NSObject {
     static let shared = Tasks()
     
     private (set) var list: [Task] = Array()
-    private static let filePath = "tasks"
+    private static let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "tasks"
     
     override init() {
         super.init()
@@ -28,6 +28,7 @@ class Tasks: NSObject {
     
     func add(task: Task) {
         list.append(task)
+        
         NSKeyedArchiver.archiveRootObject(self.list, toFile: Tasks.filePath)
     }
     
