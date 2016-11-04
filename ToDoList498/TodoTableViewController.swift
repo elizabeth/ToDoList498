@@ -2,47 +2,41 @@
 //  TodoTableViewController.swift
 //  ToDoList498
 //
-//  Created by iGuest on 10/20/16.
-//  Copyright © 2016 iGuest. All rights reserved.
+//  Created by Elizabeth on 10/20/16.
+//  Copyright © 2016 Elizabeth. All rights reserved.
 //
 
 import UIKit
 
-class TodoTableViewController: UITableViewController {    
+class TodoTableViewController: UITableViewController {
+
     private var tasks = Tasks.shared
-    
-    private static func getTasks() -> [[String:Any]] {
-        let tasks = UserDefaults.standard.array(forKey: "tasks")
-        if tasks == nil {
-            return Array()
-        } else {
-            return tasks! as! [[String : Any]]
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = .red
-        self.navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        
+        self.configureNavBar()
+        self.configureTableview()
+    }
+    
+    private func configureTableview() {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 69
-        
         self.tableView.tableFooterView = UIView()
+    }
+    
+    private func configureNavBar() {
+        self.title = "INFO 498 To Do List"
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: 0x72A276)
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.tableView.reloadData()
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -79,31 +73,15 @@ class TodoTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             self.tasks.remove(at: indexPath.row)
-            
-            var arr = TodoTableViewController.getTasks()
-            print(indexPath.row)
-            print(arr)
-            arr.remove(at: indexPath.row)
-            UserDefaults.standard.set(arr, forKey: "tasks")
-            
             tableView.deleteRows(at: [indexPath], with: .fade)
             
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
     }
     */
 

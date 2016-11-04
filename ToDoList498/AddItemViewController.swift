@@ -2,8 +2,8 @@
 //  AddItemViewController.swift
 //  ToDoList498
 //
-//  Created by Sam Bender on 10/20/16.
-//  Copyright © 2016 iGuest. All rights reserved.
+//  Created by Elizabeth on 10/20/16.
+//  Copyright © 2016 Elizabeth. All rights reserved.
 //
 
 import UIKit
@@ -28,17 +28,6 @@ class AddItemViewController: UIViewController {
     }
     
     @IBAction func addItem(_ sender: AnyObject) {
-//        let defaults = UserDefaults.standard
-//        var tasks = defaults.array(forKey: "tasks")
-//        if tasks == nil {
-//            tasks = Array()
-//        }
-//        tasks!.append([
-//            "title" : self.taskTitle.text!,
-//            "description" : self.taskDescription.text!
-//        ])
-//        defaults.set(tasks, forKey: "tasks")
-        
         let tasks = Tasks.shared
         tasks.add(task: Task(title: self.taskTitle.text!, taskDescription: self.taskDescription.text))
         self.dismiss(animated: true, completion: nil)
