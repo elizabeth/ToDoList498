@@ -28,6 +28,12 @@ class AddItemViewController: UIViewController {
     }
     
     @IBAction func addItem(_ sender: AnyObject) {
+        if self.taskTitle.text == nil || (self.taskTitle.text?.isEmpty)! {
+            Animation.grow(view: self.taskTitle)
+            Animation.flashBG(color: UIColor.red.withAlphaComponent(0.25), view: self.taskTitle)
+            return
+        }
+        
         let tasks = Tasks.shared
         tasks.add(task: Task(title: self.taskTitle.text!, taskDescription: self.taskDescription.text))
         self.dismiss(animated: true, completion: nil)
